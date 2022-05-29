@@ -1,4 +1,3 @@
-# Configure the Azure provider
 variable "prefix" {
   default = "tfvmex"
 }
