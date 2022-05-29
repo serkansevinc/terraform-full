@@ -1,0 +1,2 @@
+rsgname  = "changedfile"
+location = "centralus"

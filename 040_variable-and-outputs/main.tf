@@ -1,11 +1,48 @@
 terraform {
+  #   backend "remote" {
+  #     hostname = "app.terraform.io"
+  #     organization = "DaCompany"
+
+  #     workspaces {
+  #       name = "getting-started"
+  #     }
+  #   }
+
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~> 3.0.2"
+    }
+  }
+
+  required_version = ">= 1.1.0"
 }
 
-module "aws_server" {
-	source = ".//aws_server"
-	instance_type = "t2.micro"
+provider "azurerm" {
+  features {
+    resource_group {
+      prevent_deletion_if_contains_resources = false
+    }
+  }
 }
 
-output "public_ip" {
-  value = module.aws_server.public_ip
+resource "azurerm_resource_group" "example" {
+  name     = var.rsgname
+  location = var.location
+}
+
+variable "location" {
+    type = string
+    description = "The location for deployment"
+    default = "West US"
+}
+
+variable "rsgname" {
+  type        = string
+  description = "Resource Group name"
+  default     = "terraform-example"
+}
+
+output "resource_group_id" {
+  value = azurerm_resource_group.example
 }
