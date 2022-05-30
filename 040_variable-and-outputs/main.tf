@@ -32,9 +32,9 @@ resource "azurerm_resource_group" "example" {
 }
 
 variable "location" {
-    type = string
-    description = "The location for deployment"
-    default = "West US"
+  type        = string
+  description = "The location for deployment"
+  default     = "West US"
 }
 
 variable "rsgname" {
@@ -44,5 +44,6 @@ variable "rsgname" {
 }
 
 output "resource_group_id" {
-  value = azurerm_resource_group.example
+  value = azurerm_resource_group.example.id
+  # sensitive = true
 }
