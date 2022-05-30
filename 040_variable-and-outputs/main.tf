@@ -1,49 +1,13 @@
 terraform {
-  #   backend "remote" {
-  #     hostname = "app.terraform.io"
-  #     organization = "DaCompany"
-
-  #     workspaces {
-  #       name = "getting-started"
-  #     }
-  #   }
-
-  required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "~> 3.0.2"
-    }
-  }
-
-  required_version = ">= 1.1.0"
 }
 
-provider "azurerm" {
-  features {
-    resource_group {
-      prevent_deletion_if_contains_resources = false
-    }
-  }
-}
-
-resource "azurerm_resource_group" "example" {
-  name     = var.rsgname
-  location = var.location
-}
-
-variable "location" {
-  type        = string
-  description = "The location for deployment"
-  default     = "West US"
-}
-
-variable "rsgname" {
-  type        = string
-  description = "Resource Group name"
-  default     = "terraform-example"
+module "azure_rg" {
+    source = "./azure_rg"
+    rsgname = "changefile"
+    location = "westeurope"
 }
 
 output "resource_group_id" {
-  value = azurerm_resource_group.example.id
+  value = module.azure_rg.resource_group_id
   # sensitive = true
 }
