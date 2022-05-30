@@ -1,2 +1,2 @@
 rsgname  = "changedfile"
-location = "centralus"
+location = "westeurope"
