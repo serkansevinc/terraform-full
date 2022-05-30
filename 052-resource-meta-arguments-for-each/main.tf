@@ -1,29 +1,47 @@
 terraform {
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "3.58.0"
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~> 3.0.2"
+    }
+  }
+
+  required_version = ">= 1.1.0"
+}
+
+provider "azurerm" {
+  features {
+    resource_group {
+      prevent_deletion_if_contains_resources = false
     }
   }
 }
 
-provider "aws" {
-  profile = "default"
-  region  = "us-east-1"
-}
-resource "aws_instance" "my_server" {
-	for_each = {
-		nano = "t2.nano"
-		micro =  "t2.micro"
-		small =  "t2.small"
-	}
-  ami           = "ami-087c17d1fe0178315"
-  instance_type = each.value
-	tags = {
-		Name = "Server-${each.key}"
-	}
+resource "azurerm_resource_group" "example" {
+  for_each = {
+      test = "rg-test"
+      acceptance = "rg-acceptance"
+      production = "rg-production"
+  }
+  name     = "${var.rsgname}-${each.value}"
+  location = var.location
+  tags = {
+    Name = "Server-${each.key}"
+  }
 }
 
-output "public_ip" {
-  value = values(aws_instance.my_server)[*].public_ip
+variable "location" {
+  type        = string
+  description = "The location for deployment"
+  default     = "West Europe"
+}
+
+variable "rsgname" {
+  type        = string
+  description = "Resource Group name"
+  default     = "terraform-example"
+}
+
+output "resource_group_id" {
+  value = values(azurerm_resource_group.example)[*].id
 }
