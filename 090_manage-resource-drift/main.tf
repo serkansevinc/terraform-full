@@ -22,6 +22,14 @@ resource "azurerm_resource_group" "example" {
   location = var.location
 }
 
+resource "azurerm_storage_account" "storage" {
+  name                     = "macawtfstorage"
+  resource_group_name      = var.rsgname
+  location                 = var.location
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+}
+
 variable "location" {
   type        = string
   description = "The location for deployment"
