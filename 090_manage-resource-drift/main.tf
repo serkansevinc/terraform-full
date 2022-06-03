@@ -1,28 +1,39 @@
 terraform {
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "3.58.0"
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~> 3.0.2"
+    }
+  }
+
+  required_version = ">= 1.1.0"
+}
+
+provider "azurerm" {
+  features {
+    resource_group {
+      prevent_deletion_if_contains_resources = false
     }
   }
 }
 
-provider "aws" {
-  profile = "default"
-  region  = "us-east-1"
-}
-resource "aws_instance" "my_server" {
-  ami           = "ami-087c17d1fe0178315"
-  instance_type = "t2.micro"
-	tags = {
-		Name = "MyServer"
-	}
+resource "azurerm_resource_group" "example" {
+  name     = var.rsgname
+  location = var.location
 }
 
-resource "aws_s3_bucket" "bucket" {
-  bucket = "my-new-bucket-421419084210"
+variable "location" {
+  type        = string
+  description = "The location for deployment"
+  default     = "West US"
 }
 
-output "public_ip" {
-  value = aws_instance.my_server.public_ip
+variable "rsgname" {
+  type        = string
+  description = "Resource Group name"
+  default     = "example2-resources"
+}
+
+output "resource_group_id" {
+  value = azurerm_resource_group.example.id
 }
