@@ -33,7 +33,7 @@ resource "azurerm_storage_account" "storage" {
 variable "location" {
   type        = string
   description = "The location for deployment"
-  default     = "West US"
+  default     = "West Europe"
 }
 
 variable "rsgname" {
