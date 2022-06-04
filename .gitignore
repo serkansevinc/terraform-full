@@ -1,7 +1,20 @@
+# Custom sensitive data
 **/*.json
+
+# Crash log files
+**/crash.log
+
+# Terraform lockfile
 **/.terraform.lock.hcl
+
+# .tfstate files
 **/terraform.tfstate
 **/terraform.tfstate.backup
 **/terraform.tfstate.*.backup
 
+# Local .terraform directories
 **/.terraform/
+
+# Ignore CLI configuration files
+**/.terraformrc
+**/terraform.rc
