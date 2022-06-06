@@ -1,0 +1,95 @@
+2022-06-04T10:24:24.588+0200 [INFO]  Terraform version: 1.2.0
+2022-06-04T10:24:24.589+0200 [DEBUG] using github.com/hashicorp/go-tfe v1.0.0
+2022-06-04T10:24:24.589+0200 [DEBUG] using github.com/hashicorp/hcl/v2 v2.12.0
+2022-06-04T10:24:24.589+0200 [DEBUG] using github.com/hashicorp/terraform-config-inspect v0.0.0-20210209133302-4fd17a0faac2
+2022-06-04T10:24:24.589+0200 [DEBUG] using github.com/hashicorp/terraform-svchost v0.0.0-20200729002733-f050f53b9734
+2022-06-04T10:24:24.589+0200 [DEBUG] using github.com/zclconf/go-cty v1.10.0
+2022-06-04T10:24:24.589+0200 [INFO]  Go runtime version: go1.18.1
+2022-06-04T10:24:24.589+0200 [INFO]  CLI args: []string{"C:\\ProgramData\\chocolatey\\lib\\terraform\\tools\\terraform.exe", "state"}
+2022-06-04T10:24:24.589+0200 [TRACE] Stdout is a terminal of width 42
+2022-06-04T10:24:24.589+0200 [TRACE] Stderr is a terminal of width 42
+2022-06-04T10:24:24.589+0200 [TRACE] Stdin is a terminal
+2022-06-04T10:24:24.593+0200 [DEBUG] Attempting to open CLI config file: C:\Users\Serkan\AppData\Roaming\terraform.rc
+2022-06-04T10:24:24.593+0200 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2022-06-04T10:24:24.593+0200 [INFO]  Loading CLI configuration from C:\Users\Serkan\AppData\Roaming\terraform.d\credentials.tfrc.json
+2022-06-04T10:24:24.593+0200 [DEBUG] ignoring non-existing provider search directory terraform.d/plugins
+2022-06-04T10:24:24.594+0200 [DEBUG] ignoring non-existing provider search directory C:\Users\Serkan\AppData\Roaming\terraform.d\plugins
+2022-06-04T10:24:24.594+0200 [DEBUG] ignoring non-existing provider search directory C:\Users\Serkan\AppData\Roaming\HashiCorp\Terraform\plugins
+2022-06-04T10:24:24.594+0200 [INFO]  CLI command args: []string{"state"}
+2022-06-04T10:24:28.741+0200 [INFO]  Terraform version: 1.2.0
+2022-06-04T10:24:28.742+0200 [DEBUG] using github.com/hashicorp/go-tfe v1.0.0
+2022-06-04T10:24:28.742+0200 [DEBUG] using github.com/hashicorp/hcl/v2 v2.12.0
+2022-06-04T10:24:28.742+0200 [DEBUG] using github.com/hashicorp/terraform-config-inspect v0.0.0-20210209133302-4fd17a0faac2
+2022-06-04T10:24:28.742+0200 [DEBUG] using github.com/hashicorp/terraform-svchost v0.0.0-20200729002733-f050f53b9734
+2022-06-04T10:24:28.742+0200 [DEBUG] using github.com/zclconf/go-cty v1.10.0
+2022-06-04T10:24:28.742+0200 [INFO]  Go runtime version: go1.18.1
+2022-06-04T10:24:28.742+0200 [INFO]  CLI args: []string{"C:\\ProgramData\\chocolatey\\lib\\terraform\\tools\\terraform.exe", "state", "list"}
+2022-06-04T10:24:28.742+0200 [TRACE] Stdout is a terminal of width 42
+2022-06-04T10:24:28.742+0200 [TRACE] Stderr is a terminal of width 42
+2022-06-04T10:24:28.742+0200 [TRACE] Stdin is a terminal
+2022-06-04T10:24:28.746+0200 [DEBUG] Attempting to open CLI config file: C:\Users\Serkan\AppData\Roaming\terraform.rc
+2022-06-04T10:24:28.746+0200 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2022-06-04T10:24:28.746+0200 [INFO]  Loading CLI configuration from C:\Users\Serkan\AppData\Roaming\terraform.d\credentials.tfrc.json
+2022-06-04T10:24:28.747+0200 [DEBUG] ignoring non-existing provider search directory terraform.d/plugins
+2022-06-04T10:24:28.747+0200 [DEBUG] ignoring non-existing provider search directory C:\Users\Serkan\AppData\Roaming\terraform.d\plugins
+2022-06-04T10:24:28.748+0200 [DEBUG] ignoring non-existing provider search directory C:\Users\Serkan\AppData\Roaming\HashiCorp\Terraform\plugins
+2022-06-04T10:24:28.748+0200 [INFO]  CLI command args: []string{"state", "list"}
+2022-06-04T10:24:28.749+0200 [TRACE] Meta.Backend: no config given or present on disk, so returning nil config
+2022-06-04T10:24:28.749+0200 [TRACE] Meta.Backend: backend has not previously been initialized in this working directory
+2022-06-04T10:24:28.749+0200 [DEBUG] New state was assigned lineage "192ba7f6-7827-cf9b-afd3-069d74bfe576"
+2022-06-04T10:24:28.749+0200 [TRACE] Meta.Backend: using default local state only (no backend configuration, and no existing initialized backend)
+2022-06-04T10:24:28.749+0200 [TRACE] Meta.Backend: instantiated backend of type <nil>
+2022-06-04T10:24:28.750+0200 [DEBUG] checking for provisioner in "."
+2022-06-04T10:24:28.750+0200 [DEBUG] checking for provisioner in "C:\\ProgramData\\chocolatey\\lib\\terraform\\tools"
+2022-06-04T10:24:28.750+0200 [TRACE] Meta.Backend: backend <nil> does not support operations, so wrapping it in a local backend
+2022-06-04T10:24:28.750+0200 [TRACE] backend/local: state manager for workspace "default" will:
+ - read initial snapshot from terraform.tfstate
+ - write new snapshots to terraform.tfstate
+ - create any backup at terraform.tfstate.backup
+2022-06-04T10:24:28.750+0200 [TRACE] statemgr.Filesystem: reading initial snapshot from terraform.tfstate
+2022-06-04T10:24:28.750+0200 [TRACE] statemgr.Filesystem: snapshot file has nil snapshot, but that's okay
+2022-06-04T10:24:28.750+0200 [TRACE] statemgr.Filesystem: read nil snapshot
+2022-06-04T10:24:36.733+0200 [INFO]  Terraform version: 1.2.0
+2022-06-04T10:24:36.734+0200 [DEBUG] using github.com/hashicorp/go-tfe v1.0.0
+2022-06-04T10:24:36.734+0200 [DEBUG] using github.com/hashicorp/hcl/v2 v2.12.0
+2022-06-04T10:24:36.734+0200 [DEBUG] using github.com/hashicorp/terraform-config-inspect v0.0.0-20210209133302-4fd17a0faac2
+2022-06-04T10:24:36.734+0200 [DEBUG] using github.com/hashicorp/terraform-svchost v0.0.0-20200729002733-f050f53b9734
+2022-06-04T10:24:36.734+0200 [DEBUG] using github.com/zclconf/go-cty v1.10.0
+2022-06-04T10:24:36.734+0200 [INFO]  Go runtime version: go1.18.1
+2022-06-04T10:24:36.734+0200 [INFO]  CLI args: []string{"C:\\ProgramData\\chocolatey\\lib\\terraform\\tools\\terraform.exe", "apply", "-destroy", "-auto-approve"}
+2022-06-04T10:24:36.734+0200 [TRACE] Stdout is a terminal of width 42
+2022-06-04T10:24:36.734+0200 [TRACE] Stderr is a terminal of width 42
+2022-06-04T10:24:36.734+0200 [TRACE] Stdin is a terminal
+2022-06-04T10:24:36.737+0200 [DEBUG] Attempting to open CLI config file: C:\Users\Serkan\AppData\Roaming\terraform.rc
+2022-06-04T10:24:36.737+0200 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2022-06-04T10:24:36.737+0200 [INFO]  Loading CLI configuration from C:\Users\Serkan\AppData\Roaming\terraform.d\credentials.tfrc.json
+2022-06-04T10:24:36.738+0200 [DEBUG] ignoring non-existing provider search directory terraform.d/plugins
+2022-06-04T10:24:36.738+0200 [DEBUG] ignoring non-existing provider search directory C:\Users\Serkan\AppData\Roaming\terraform.d\plugins
+2022-06-04T10:24:36.739+0200 [DEBUG] ignoring non-existing provider search directory C:\Users\Serkan\AppData\Roaming\HashiCorp\Terraform\plugins
+2022-06-04T10:24:36.739+0200 [INFO]  CLI command args: []string{"apply", "-destroy", "-auto-approve"}
+2022-06-04T10:24:36.740+0200 [TRACE] Meta.Backend: no config given or present on disk, so returning nil config
+2022-06-04T10:24:36.740+0200 [TRACE] Meta.Backend: backend has not previously been initialized in this working directory
+2022-06-04T10:24:36.740+0200 [DEBUG] New state was assigned lineage "d92f336a-b4a7-ba30-bc2e-a89817d2feb6"
+2022-06-04T10:24:36.740+0200 [TRACE] Meta.Backend: using default local state only (no backend configuration, and no existing initialized backend)
+2022-06-04T10:24:36.740+0200 [TRACE] Meta.Backend: instantiated backend of type <nil>
+2022-06-04T10:24:36.741+0200 [DEBUG] checking for provisioner in "."
+2022-06-04T10:24:36.741+0200 [DEBUG] checking for provisioner in "C:\\ProgramData\\chocolatey\\lib\\terraform\\tools"
+2022-06-04T10:24:36.741+0200 [TRACE] Meta.Backend: backend <nil> does not support operations, so wrapping it in a local backend
+2022-06-04T10:24:36.741+0200 [INFO]  backend/local: starting Apply operation
+2022-06-04T10:24:36.742+0200 [TRACE] backend/local: requesting state manager for workspace "default"
+2022-06-04T10:24:36.742+0200 [TRACE] backend/local: state manager for workspace "default" will:
+ - read initial snapshot from terraform.tfstate
+ - write new snapshots to terraform.tfstate
+ - create any backup at terraform.tfstate.backup
+2022-06-04T10:24:36.742+0200 [TRACE] backend/local: requesting state lock for workspace "default"
+2022-06-04T10:24:37.166+0200 [TRACE] statemgr.Filesystem: preparing to manage state snapshots at terraform.tfstate
+2022-06-04T10:24:37.167+0200 [TRACE] statemgr.Filesystem: no previously-stored snapshot exists
+2022-06-04T10:24:37.167+0200 [TRACE] statemgr.Filesystem: locking terraform.tfstate using LockFileEx
+2022-06-04T10:24:37.167+0200 [TRACE] statemgr.Filesystem: writing lock metadata to .terraform.tfstate.lock.info
+2022-06-04T10:24:37.172+0200 [TRACE] backend/local: reading remote state for workspace "default"
+2022-06-04T10:24:37.172+0200 [TRACE] statemgr.Filesystem: reading latest snapshot from terraform.tfstate
+2022-06-04T10:24:37.172+0200 [TRACE] statemgr.Filesystem: snapshot file has nil snapshot, but that's okay
+2022-06-04T10:24:37.172+0200 [TRACE] statemgr.Filesystem: read nil snapshot
+2022-06-04T10:24:37.172+0200 [TRACE] backend/local: populating backend.LocalRun for current working directory
+2022-06-04T10:24:37.175+0200 [TRACE] statemgr.Filesystem: removing lock metadata file .terraform.tfstate.lock.info
+2022-06-04T10:24:37.176+0200 [TRACE] statemgr.Filesystem: unlocked by closing terraform.tfstate
