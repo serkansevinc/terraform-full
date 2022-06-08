@@ -1,4 +1,5 @@
 # Custom sensitive data
+**/terraform.txt
 **/*.json
 
 # Crash log files
