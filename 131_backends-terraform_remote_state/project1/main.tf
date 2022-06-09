@@ -1,27 +1,33 @@
-terraform {
-
+provider "azurerm" {
+  features {}
 }
 
-provider "aws" {
-	profile = "default"
-	region = "us-east-1"
+resource "azurerm_resource_group" "example" {
+  name     = "my-resources"
+  location = "West Europe"
 }
 
-module "vpc" {
-  source = "terraform-aws-modules/vpc/aws"
+module "vnet" {
+  source              = "Azure/vnet/azurerm"
+  resource_group_name = azurerm_resource_group.example.name
+  address_space       = ["10.0.0.0/16"]
+  subnet_prefixes     = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
+  subnet_names        = ["subnet1", "subnet2", "subnet3"]
 
-  name = "my-terraform-vpc"
-  cidr = "10.0.0.0/16"
+  subnet_service_endpoints = {
+    subnet2 = ["Microsoft.Storage", "Microsoft.Sql"],
+    subnet3 = ["Microsoft.AzureActiveDirectory"]
+  }
 
-  azs             = ["us-east-1a", "us-east-1b", "us-east-1c"]
-  private_subnets = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
-  public_subnets  = ["10.0.101.0/24", "10.0.102.0/24", "10.0.103.0/24"]
+  tags = {
+    environment = "dev"
+    costcenter  = "it"
+  }
 
-  enable_nat_gateway = false
-  enable_vpn_gateway = false
+  depends_on = [azurerm_resource_group.example]
 }
 
-output "vpc_id" {
-  value = module.vpc.vpc_id
-	description = "Module VPC ID"
+output "vnet_id" {
+    value = module.vnet.vnet_id
+    description = "Module VPC ID"
 }
