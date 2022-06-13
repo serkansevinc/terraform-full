@@ -20,5 +20,6 @@
 **/.terraformrc
 **/terraform.rc
 
-# Playing with Packer
+# Playing with HashiCorp tools
 **/packer.exe
+**/vault.exe
